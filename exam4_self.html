@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>혼자하는거</title>
+    <link href="../css/default.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    
+    <style>
+        /* font-family: 'Roboto', sans-serif; */
+        /* font-family: 'Gowun Dodum', sans-serif;
+            font-family: 'Nanum Gothic', sans-serif; */
+
+        /* header 부분 */
+        div.header{
+            width: 960px; /* =widht 100% - 부모(body)크기만큼 */
+            height: 200px;
+            overflow: hidden; /* 자식 요소에 float 속성을 썼을때*/
+            position: relative; /* position을 잡기 위한 부모요소 설정 */
+            margin-bottom: 20px; /* 아래쪽 밖 여백, section과 상하 분리 여백 */
+            /* background-color: aqua; /* 지울 부분 */
+            border-bottom: 1px solid black; /*언더라인 잡으면 지울 부분*/
+        }
+        img{width: 25px; height: 25px; margin-left: 5px;} /* 왼쪽 아이콘 5개 크기*/
+        /* == logo 부분== */
+        div.logo{
+            position: absolute; /*부모요소에 포지션:릴레이티브 잡혀있으면 자식은 전부다 앱솔 써야함*/
+            left: 20px;
+            top: 30px;
+            /* background-color: red; /* 지울 부분 */
+            width: 300px;
+            height: 60px; 
+        }
+        /* == 로고 이미지 부분 == */
+        div.logo>img{width: 55px;
+                    height: 55px;
+                    float: left;
+                    margin-left: 10px;}
+        
+        /* == 로고 옆 텍스트 부분 == */
+        div.logo>h1{
+            font-family: 'Gowun Dodum', sans-serif;
+            color: darkslategray;
+            line-height: 13px;
+            text-shadow: 2px 2px 2px #B5842F;
+        }
+        
+        /* ==nav 부분(로그인~사이트맵)==*/
+        div.nav{
+            position: absolute;
+            top: 40px;
+            right: 10px;
+            width: 300px;
+            height: 40px; /*자식 요소에 height 있으니까 이제 제거 가능, 처음에 구역 확인할땐 있어야됨*/
+            font-family: 'Nanum Gothic', sans-serif;
+            text-align: right; /* 로그인~사이트맵 텍스트를 담고있는 최종 부모가 여기니까 이쪽에 설정*/
+            /* background-color: azure; /* 지울 부분 */
+        }
+        div.nav li{
+            display: inline-block; /* ~~~~~inline block 진짜 마지막~~~~~*/
+        }
+        div.nav li>a{
+            display: block;
+            padding: 5px 10px;
+        }
+        div.nav li>a:hover{
+            color: darkgreen;
+            border-radius: 5px;
+        }
+        /* ==info부분== */
+        div.info{
+            position: absolute;
+            bottom: 50px;
+            left: 100px;
+            width: 700px;
+            height: 30px;
+            font-family: 'Nanum Gothic', sans-serif;
+            text-align: center;
+            /* background-color: darkgreen; /* 지울 부분 */
+        }
+        div.info li{
+            display: inline-block;
+        }
+
+        div.info li>a{
+            display: block;
+            padding: 6px 20px;
+        }
+        div.info li>a:hover{
+            text-decoration: underline}
+
+        /*== map 부분 ==*/
+        
+
+        /*==icon 부분==*/
+        div.icon{
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+        }
+        div.icon li{
+            display: inline-block;
+        }
+        div.icon>img{
+            width: 10px;
+            height:10px;}
+        /* section 부분 */
+        div.section{
+            width: 960px;
+            height: 600px;
+            margin-bottom: 20px;
+            overflow: hidden; /* 자식 요소에 float 속성을 적용하기 위해 꼭 씀 안쓰면 그 다음 큰박스에 clear:both 써야함 */
+            font-family: 'Nanum Gothic', sans-serif;
+            /* background-color: bisque;  지울 부분 */
+        }
+
+
+        /* ==left 부분==*/
+        div.left{
+            width: 200px;
+            margin-right: 20px;
+            margin-left: 20px;
+            height: 600px;
+            float: left;
+            /* background-color: lightcoral; 지울 부분 */
+        }
+        div.left>ul>li{
+            border: 1px solid black;
+            text-align: center;
+            width: 180px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        div.left>ul>li>a{
+            width: 180px;
+            letter-spacing: 3px;
+            padding: 10px 20px;
+        }
+
+        div.left>ul>li:first-child{
+            background-color: rgb(201, 201, 201);
+        }
+
+        div.left>ul>li>a:hover{text-decoration: underline;}
+
+        /* ==right 부분== */
+        div.right{
+            width: 720px;
+            height: 600px;
+            float: left;
+            /* position: relative; */
+            /* background-color: lightpink; /* 지울 부분 */
+        }
+
+        .right img{
+            width: 120px;
+            height: 150px;
+            float: left;
+        }
+
+        .right ul{
+            float:left;
+            margin-top: 40px;
+            margin-left: 10px;
+        }
+
+        .con1, .con2, .con3{
+            margin: 10px;
+            border: 1px solid rgb(193, 193, 193); /* 지울 부분 */
+            width: 600px;
+            height: 150px;
+        }
+
+        /* footer 부분 */
+        footer.footer{
+            /* clear: both; 위쪽 float 속성을 적용하지 않음, 부모요소에 overflow-hedden 을 안썼으면 써야함 */
+            width: 960px;
+            height: 150px;
+            font-family: 'Nanum Gothic', sans-serif;
+            /* background-color: rgb(136, 204, 206); 지울 부분 */
+        }
+        /*== footer 정보 부분== */
+        div.footer_info{
+            width: 960px;
+            text-align: center; /* a 태그에서 해도 됨*/
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            margin-bottom: 10px;
+            /* background-color: seagreen; 지울 부분 */
+        }
+        div.footer_info li{
+            display: inline-block;
+        }
+        div.footer_info li>a{
+            display: inline-block;
+            font-size: 0.9rem; /* root 요소의 글자크기의 0.8배 */
+            padding: 10px 5px 10px 5px;
+        }
+        div.footer_info li>a:hover{color: blue;}
+        
+        /*== footer 정보 부분==*/
+        div.footer_addr li{ /* 텍스트가 li에 담겨있어서 li로 씀*/
+            margin-left: 50px;
+            height: 20px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- header 부분(로고, 로그인, 회사소개...) -->
+    <div class="header">
+        <!-- 로고 부분 -->
+        <div class="logo">
+            <img src="../images/logo_book.png">
+            <h1><strong>책마을 책세상</strong></h1>
+        </div>
+        <!-- 헤더 네비 부분(로그인~사이트맵) -->
+        <div class="nav">
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">사이트맵</a></li>
+            </ul>
+        </div>
+        <!-- 헤더 인포 부분(프로그램~자료실)-->
+        <div class="info">
+            <ul>
+                <li><a href="#">프로그램</a></li>
+                <li><a href="#">열린공간</a></li>
+                <li><a href="#">동아리 모임</a></li>
+                <li><a href="#">이용안내</a></li>
+                <li><a href="#">자료실</a></li>
+            </ul>
+        </div>
+        <!-- 헤더 map 부분 (아이콘 1개 있는 곳)-->
+        <div class="map">
+
+        </div>
+        <!-- 아이콘 5개 부분 -->
+        <div class="icon">
+            <ul>
+                <li><a href="#" target="_blank"><img src="../images/icon_print(color).png"></a></li>
+                <li><a href="#" target="_blank"><img src="../images/icon_instagram(color).png"></a></li>
+                <li><a href="#" target="_blank"><img src="../images/icon_facebook(color).png"></a></li>
+                <li><a href="#" target="_blank"><img src="../images/icon_youtube(color).png"></a></li>
+                <li><a href="#" target="_blank"><img src="../images/icon_twitter(color).png"></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- section 부분(분문 중앙) -->
+    <div class="section">
+        <!-- 왼쪽 article 부분 -->
+        <div class="left">
+            <ul>
+                <li>책마을책세상 안내</li>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">프로그램</a></li>
+                <li><a href="#">수강신청</a></li>
+                <li><a href="#">도서추천</a></li>
+            </ul>
+        </div>
+        <!-- 오른쪽 article 부분 -->
+        <div class="right">
+                <div class="con1">
+                    <img src="../../study/image/4276F639-1FEC-4D0E-BF00-3001906C8426.JPG">
+                    <ul>
+                        <li>콘텐츠 1 영역</li>
+                        <li>몽구는 귀여워</li>
+                        <li>암암 귀엽지</li>
+                        <li>당연 귀엽고말고</li>
+                    </ul>
+                </div>
+                <div class="con2">
+                    <img src="../../study/image/IMG_4337.jpeg">
+                    <ul>
+                        <li>콘텐츠 2 영역</li>
+                        <li>우리 몽구는요</li>
+                        <li>우주최강귀염둥이</li>
+                        <li>우주최강애교쟁이</li>
+                    </ul>
+                </div>
+                <div class="con3">
+                    <img src="../../study/image/IMG_4519.JPG">
+                    <ul>
+                        <li>콘텐츠 3 영역</li>
+                        <li>내사랑 몽구</li>
+                        <li>예쁜몽구</li>
+                        <li>양천구 보안관</li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+    <!-- footer 부분(회사 주소) -->
+    <footer class="footer">
+        <!-- 개인정보처리방침 부분 -->
+        <div class="footer_info">
+            <ul>
+                <li><a href="#">정보공개알림</a></li>
+                <li>&nbsp;|&nbsp;</li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li>&nbsp;|&nbsp;</li>
+                <li><a href="#">이용서비스현황</a></li>
+                <li>&nbsp;|&nbsp;</li>
+                <li><a href="#">이용규정</a></li>
+                <li>&nbsp;|&nbsp;</li>
+                <li><a href="#">이메일무단수집거부</a></li>
+                <li>&nbsp;|&nbsp;</li>
+                <li><a href="#">전화번호안내</a></li>
+                <li>&nbsp;|&nbsp;</li>
+                <li><a href="#">오시는길</a></li>
+            </ul>
+        </div>
+        <!-- 주소 부분 -->
+        <div class="footer_addr">
+            <ul>
+                <li>(우) 062220 서울시 강남구 테헤란로 212(역삼동)&nbsp;&nbsp;|&nbsp;&nbsp;대표전화 : 02-1234-1234&nbsp;&nbsp;|&nbsp;&nbsp;팩스번호 02-1234-4567<br>
+                Copyright&copy; 2022 책마을책세상 All Right Reserved</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
